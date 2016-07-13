@@ -1,0 +1,20 @@
+{
+  "name": "element-demo",
+  "authors": [
+    "Kate Nelson <mkatenelson@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.6.0"
+  }
+}

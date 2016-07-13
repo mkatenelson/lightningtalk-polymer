@@ -1,0 +1,76 @@
+<!-- Imports resource to file -->
+<link rel="import" href="../polymer/polymer.html">
+<!-- A custom element, imports Polymer library -->
+<link rel="import" href="../iron-icon/iron-icon.html">
+
+<!-- Defines element -->
+
+<!-- Wraps the element's local DOM definition -->
+<dom-module id="icon-toggle">
+<!-- id attribute shows that this module include the local DOM for an element called icon-toggle -->
+
+  <template>
+  <!-- Defines the element's local DOM structure and styling. Add markup for your element here. -->
+
+    <style>
+      /* local DOM styles go here */
+      :host {
+        display: inline-block;
+      }
+      iron-icon {
+        fill: var(--icon-toggle-color, rgba(0,0,0,0));
+        stroke: var(--icon-toggle0color, currentcolor);
+      }
+      :host([pressed]) iron-icon {
+        fill: var(--icon-toggle-color, currentcolor);
+      }
+    </style>
+
+    <!-- local DOM goes here -->
+    <!-- <span>Not much here yet.</span> -->
+
+    <!-- <iron-icon icon="polymer">Not much here yet.</iron-icon> -->
+
+    <iron-icon icon="[[toggleIcon]]">Not much here yet.</iron-icon>
+  </template>
+
+  <script>
+  // Polymer({
+  //   is: 'icon-toggle',
+  // });
+
+  // Polymer({
+  //   is: 'icon-toggle',
+  //   properties: {
+  //     toggleIcon: String,
+  //     pressed: {
+  //       type: Boolean,
+  //       value: false,
+  //       notify: true,
+  //       reflectToAttribute: true
+  //     }
+  //   },
+  // });
+
+  Polymer({
+    is: 'icon-toggle',
+    properties: {
+      toggleIcon: String,
+      pressed: {
+        type: Boolean,
+        value: false,
+        notify: true,
+        reflectToAttribute: true
+      }
+    },
+    listeners: {
+      'tap': 'toggle'
+    },
+    toggle: function() {
+      this.pressed = !this.pressed;
+    },
+  });
+  </script>
+  <!-- JS that registers the element -->
+
+</dom-module>
